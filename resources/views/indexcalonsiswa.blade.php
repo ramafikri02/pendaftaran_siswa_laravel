@@ -17,10 +17,10 @@
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row mb-4">
             <h2>Tabel Data Calon Siswa</h2>
         </div>
-        <table class="table">
+        <table class="table table-bordered table-striped">
             <tr>
                 <td>No</td>
                 <td>No PPDB</td>
@@ -39,6 +39,7 @@
                 <td>{{ $itemSiswa->pilihan1 }}</td>
                 <td>{{ $itemSiswa->pilihan2 }}</td>
                 <td>
+                    <a href="#" class="btn-success" style="padding:5px;">Lihat</a>
                     <a href="#" class="btn-warning" style="padding:5px;">Edit</a>
                     <a href="#" class="btn-danger" style="padding:5px;">Hapus</a>
                 </td>

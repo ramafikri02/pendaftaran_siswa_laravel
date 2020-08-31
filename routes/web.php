@@ -23,5 +23,5 @@ Route::post('/calonsiswa', 'CalonsiswaController@store')->name('calonsiswa.store
 //Menampilkan data siswa baru
 Route::get('/siswabaru', 'SiswabaruController@index');
 
-//Menampilkan hanya dengan menggunakan 1 parameter
-Route::get('/calonsiswa/{calonsiswa}', 'CalonsiswaController@show');
+//Menampilkan data siswa baru berdasarkan parameter
+Route::get('/siswabaru/{calonsiswa}', 'SiswabaruController@show');

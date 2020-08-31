@@ -48,8 +48,4 @@ class CalonsiswaController extends Controller
 
         return "Data Berhasil di Simpan ke Database." ;
     }
-
-    public function show($calonsiswa) {
-        dd('$calonsiswa');
-    }
 }

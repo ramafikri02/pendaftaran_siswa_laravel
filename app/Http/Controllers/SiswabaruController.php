@@ -13,4 +13,10 @@ class SiswabaruController extends Controller
         $csb = Calonsiswa::all();
         return view('indexcalonsiswa', ['calonsiswa'=>$csb]);
     }
+
+    public function show($calonsiswa) {
+        // dd($calonsiswa);
+        $result = Calonsiswa::find($calonsiswa);
+        return view('detail_calon', ['calonsiswa'=>$result]);
+    }
 }
