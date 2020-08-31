@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/calonsiswa', 'CalonsiswaController@index')->name('calonsiswa.index');
 Route::get('/calonsiswa/create', 'CalonsiswaController@create')->name('calonsiswa.create');
 Route::post('/calonsiswa', 'CalonsiswaController@store')->name('calonsiswa.store');
+
+//Menampilkan data siswa baru
+Route::get('/siswabaru', 'SiswabaruController@index');
+
+//Menampilkan hanya dengan menggunakan 1 parameter
+Route::get('/calonsiswa/{calonsiswa}', 'CalonsiswaController@show');
