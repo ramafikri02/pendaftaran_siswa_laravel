@@ -19,4 +19,13 @@ class SiswabaruController extends Controller
         $result = Calonsiswa::find($calonsiswa);
         return view('detail_calon', ['calonsiswa'=>$result]);
     }
+
+    public function delete($calonsiswa) {
+        $siswa = Calonsiswa::find($calonsiswa);
+        $calonsiswa = $siswa->delete();
+        
+        $csb = Calonsiswa::all();
+        return view('indexcalonsiswa', ['calonsiswa'=>$csb]);
+        
+    }
 }

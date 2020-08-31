@@ -39,9 +39,9 @@
                 <td>{{ $itemSiswa->pilihan1 }}</td>
                 <td>{{ $itemSiswa->pilihan2 }}</td>
                 <td>
-                    <a href="#" class="btn-success" style="padding:5px;">Lihat</a>
+                    <a href="/siswabaru/{{ $itemSiswa -> id }}" class="btn-success" style="padding:5px;">Lihat</a>
                     <a href="#" class="btn-warning" style="padding:5px;">Edit</a>
-                    <a href="#" class="btn-danger" style="padding:5px;">Hapus</a>
+                    <a href="/hapussiswa/{{ $itemSiswa -> id }}"  class="btn-danger" style="padding:5px;">Hapus</a>
                 </td>
             </tr>
             @empty

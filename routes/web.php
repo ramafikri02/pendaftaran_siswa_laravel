@@ -25,3 +25,6 @@ Route::get('/siswabaru', 'SiswabaruController@index');
 
 //Menampilkan data siswa baru berdasarkan parameter
 Route::get('/siswabaru/{calonsiswa}', 'SiswabaruController@show');
+
+//Menhapus data siswa baru berdasarkan parameter
+Route::get('/hapussiswa/{calonsiswa}', 'SiswabaruController@delete');

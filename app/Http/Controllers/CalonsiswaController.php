@@ -46,6 +46,7 @@ class CalonsiswaController extends Controller
         $calonsiswa->nohp = $validateData['nohp'];
         $calonsiswa->save();
 
-        return "Data Berhasil di Simpan ke Database." ;
+        $csb = Calonsiswa::all();
+        return view('indexcalonsiswa', ['calonsiswa'=>$csb]);
     }
 }
