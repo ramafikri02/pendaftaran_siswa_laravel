@@ -21,7 +21,7 @@
             <div class="col-md-8">
                 <h1>Form Pendaftaran</h1>
                 <h2>SMK Taruna Bhakti Depok</h2>
-                <form action="{{ url('/calonsiswa') }}" method="post">
+                <form action="{{ url('/calonsiswa') }}" method="post" class="mt-4">
                     @csrf
                     <div class="form-group">
                         <label for="nis">Nomor PPDB</label>
@@ -85,7 +85,7 @@
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <button class="btn btn-primary" type="submit">Daftar</button>
+                    <button class="btn btn-primary" type="submit" class="mb-4">Daftar</button>
                 </form>
             </div>
         </div>

@@ -21,36 +21,36 @@
             <div class="col-md-8">
                 <h1>Data calon siswa : {{ $calonsiswa->nama }}</h1>
                 <h2>SMK Taruna Bhakti Depok</h2>
-                <form class="mt-4">
+                <form action="" method="post" class="mt-4">
                     <div class="form-group">
                         <label for="nis">Nomor PPDB</label>
                         <input class="form-control" type="text" name="noppdb" id="noppdb" value="{{ $calonsiswa->noppdb }}" readonly></input>
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama Calon Siswa</label>
-                        <input class="form-control" type="text" name="nama" id="nama" value="{{ $calonsiswa->nama }}" readonly></input>
+                        <input class="form-control" type="text" name="nama" id="nama" value="{{ $calonsiswa->nama }}"></input>
                     </div>
                     <div class="form-group">
                         <label for="asal_sekolah">Asal Sekolah</label>
-                        <input class="form-control" type="text" name="asal_sekolah" id="asal_sekolah" value="{{ $calonsiswa->asal_sekolah }}" readonly></input>
+                        <input class="form-control" type="text" name="asal_sekolah" id="asal_sekolah" value="{{ $calonsiswa->asal_sekolah }}"></input>
                     </div>
                     <div class="form-group">
                         <label for="pilihan1">Pilihan Jurusan 1</label>
-                        <input class="form-control" type="text" name="pilihan1" id="pilihan1" value="{{ $calonsiswa->pilihan1 }}" readonly></input>
+                        <input class="form-control" type="text" name="pilihan1" id="pilihan1" value="{{ $calonsiswa->pilihan1 }}"></input>
                     </div>
                     <div class="form-group">
                         <label for="pilihan2">Pilihan Jurusan 2</label>
-                        <input class="form-control" type="text" name="pilihan2" id="pilihan2" value="{{ $calonsiswa->pilihan2 }}" readonly></input>
+                        <input class="form-control" type="text" name="pilihan2" id="pilihan2" value="{{ $calonsiswa->pilihan2 }}"></input>
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <input class="form-control" type="text" name="noppdb" id="noppdb" value="{{ $calonsiswa->noppdb }}" readonly></input>
+                        <input class="form-control" type="text" name="noppdb" id="noppdb" value="{{ $calonsiswa->noppdb }}"></input>
                     </div>
                     <div class="form-group">
                         <label for="nohp">Nomor HandPhone</label>
-                        <input class="form-control" type="text" name="nohp" id="nohp" value="{{ $calonsiswa->nohp }}" readonly></input>
+                        <input class="form-control" type="text" name="nohp" id="nohp" value="{{ $calonsiswa->nohp }}"></input>
                     </div>
-                    <a href="{{ url('/siswabaru') }}" class="btn btn-primary mb-4">Kembali</a>
+                    <button class="btn btn-primary mb-4" type="submit">Simpan</button>
                 </form>
             </div>
         </div>

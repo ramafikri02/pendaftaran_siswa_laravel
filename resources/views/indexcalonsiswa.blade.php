@@ -17,7 +17,7 @@
 
 <body>
     <div class="container">
-        <div class="row mb-4">
+        <div class="row mb-4 mt-4">
             <h2>Tabel Data Calon Siswa</h2>
         </div>
         <table class="table table-bordered table-striped">
@@ -40,7 +40,7 @@
                 <td>{{ $itemSiswa->pilihan2 }}</td>
                 <td>
                     <a href="/siswabaru/{{ $itemSiswa -> id }}" class="btn-success" style="padding:5px;">Lihat</a>
-                    <a href="#" class="btn-warning" style="padding:5px;">Edit</a>
+                    <a href="/editsiswa/{{ $itemSiswa -> id }}" class="btn-warning" style="padding:5px;">Edit</a>
                     <a href="/hapussiswa/{{ $itemSiswa -> id }}"  class="btn-danger" style="padding:5px;">Hapus</a>
                 </td>
             </tr>
