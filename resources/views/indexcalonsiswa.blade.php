@@ -20,6 +20,12 @@
         <div class="row mb-4 mt-4">
             <h2>Tabel Data Calon Siswa</h2>
         </div>
+        @if(session()->has('pesanSuccess'))
+            <div class="alert alert-success">{{ session()->get('pesanSuccess') }}</div>
+        @endif
+        @if(session()->has('pesanDanger'))
+            <div class="alert alert-danger">{{ session()->get('pesanDanger') }}</div>
+        @endif
         <table class="table table-bordered table-striped">
             <tr>
                 <td>No</td>
@@ -38,10 +44,10 @@
                 <td>{{ $itemSiswa->asal_sekolah }}</td>
                 <td>{{ $itemSiswa->pilihan1 }}</td>
                 <td>{{ $itemSiswa->pilihan2 }}</td>
-                <td>
-                    <a href="/siswabaru/{{ $itemSiswa -> id }}" class="btn-success" style="padding:5px;">Lihat</a>
-                    <a href="/editsiswa/{{ $itemSiswa -> id }}" class="btn-warning" style="padding:5px;">Edit</a>
-                    <a href="/hapussiswa/{{ $itemSiswa -> id }}"  class="btn-danger" style="padding:5px;">Hapus</a>
+                <td style="width:180px;">
+                    <a href="/calonsiswa/{{ $itemSiswa -> id }}" class="btn btn-success" style="padding:5px;">Lihat</a>
+                    <a href="/editsiswa/{{ $itemSiswa -> id }}" class="btn btn-warning" style="padding:5px;">Edit</a>
+                    <a href="/hapussiswa/{{ $itemSiswa -> id }}"  class="btn btn-danger" style="padding:5px;">Hapus</a>
                 </td>
             </tr>
             @empty

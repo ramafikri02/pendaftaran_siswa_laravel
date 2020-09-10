@@ -20,14 +20,14 @@ Route::get('/calonsiswa', 'CalonsiswaController@index')->name('calonsiswa.index'
 Route::get('/calonsiswa/create', 'CalonsiswaController@create')->name('calonsiswa.create');
 Route::post('/calonsiswa', 'CalonsiswaController@store')->name('calonsiswa.store');
 
-//Menampilkan data siswa baru
-Route::get('/siswabaru', 'SiswabaruController@index');
-
 //Menampilkan data siswa baru berdasarkan parameter
-Route::get('/siswabaru/{calonsiswa}', 'SiswabaruController@show');
+Route::get('/calonsiswa/{calonsiswa}', 'CalonsiswaController@show');
 
 //Hapus data siswa baru berdasarkan parameter
-Route::get('/hapussiswa/{calonsiswa}', 'SiswabaruController@delete');
+Route::get('/hapussiswa/{calonsiswa}', 'CalonsiswaController@delete')->name('calonsiswa.delete');
 
-//Edit data siswa baru berdasarkan parameter
-Route::get('/editsiswa/{calonsiswa}', 'SiswabaruController@edit');
+//Menampilkan form edit
+Route::get('/editsiswa/{calonsiswa}', 'CalonsiswaController@edit');
+
+//Proses edit
+Route::patch('/prosesEditsiswa/{calonsiswa}', 'CalonsiswaController@prosesEdit');

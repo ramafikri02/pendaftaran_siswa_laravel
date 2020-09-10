@@ -19,38 +19,74 @@
     <div class="container pt-4 bg-white">
         <div class="row">
             <div class="col-md-8">
-                <h1>Data calon siswa : {{ $calonsiswa->nama }}</h1>
+                <h1>Edit data calon siswa : {{ $calonsiswa->nama }}</h1>
                 <h2>SMK Taruna Bhakti Depok</h2>
-                <form action="" method="post" class="mt-4">
+                <form action="{{ url('/prosesEditsiswa', ['calonsiswa'=>$calonsiswa->id]) }}" method="post" class="mt-4">
+                    @method('PATCH')
+                    @csrf
                     <div class="form-group">
                         <label for="nis">Nomor PPDB</label>
-                        <input class="form-control" type="text" name="noppdb" id="noppdb" value="{{ $calonsiswa->noppdb }}" readonly></input>
+                        <input class="form-control @error('noppdb') is-invalid @enderror" type="text" name="noppdb" id="noppdb" value="{{ $calonsiswa->noppdb }}" readonly>
+                        @error('noppdb')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama Calon Siswa</label>
-                        <input class="form-control" type="text" name="nama" id="nama" value="{{ $calonsiswa->nama }}"></input>
+                        <input class="form-control @error('nama') is-invalid @enderror" type="text" name="nama" id="nama" value="{{ $calonsiswa->nama }}">
+                        @error('nama')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="asal_sekolah">Asal Sekolah</label>
-                        <input class="form-control" type="text" name="asal_sekolah" id="asal_sekolah" value="{{ $calonsiswa->asal_sekolah }}"></input>
-                    </div>
-                    <div class="form-group">
-                        <label for="pilihan1">Pilihan Jurusan 1</label>
-                        <input class="form-control" type="text" name="pilihan1" id="pilihan1" value="{{ $calonsiswa->pilihan1 }}"></input>
-                    </div>
-                    <div class="form-group">
-                        <label for="pilihan2">Pilihan Jurusan 2</label>
-                        <input class="form-control" type="text" name="pilihan2" id="pilihan2" value="{{ $calonsiswa->pilihan2 }}"></input>
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <input class="form-control" type="text" name="noppdb" id="noppdb" value="{{ $calonsiswa->noppdb }}"></input>
-                    </div>
-                    <div class="form-group">
-                        <label for="nohp">Nomor HandPhone</label>
-                        <input class="form-control" type="text" name="nohp" id="nohp" value="{{ $calonsiswa->nohp }}"></input>
-                    </div>
-                    <button class="btn btn-primary mb-4" type="submit">Simpan</button>
+                        <input class="form-control @error('asal_sekolah') is-invalid @enderror" type="text" name="asal_sekolah" id="asal_sekolah" value="{{ $calonsiswa->asal_sekolah }}">
+                        @error('asal_sekolah')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                        <div class="form-group">
+                            <label for="pilihan1">Pilihan Jurusan 1</label>
+                            <select class="form-control @error('pilihan1') is-invalid @enderror" type="text" name="pilihan1" id="pilihan1">
+                                <option value="{{ $calonsiswa->pilihan1 }}">{{ $calonsiswa->pilihan1 }}</option>
+                                <option value="RPL">Rekayasa perangkat Lunak</option>
+                                <option value="TKJ">Teknik Komputer dan Jaringan</option>
+                                <option value="MM">Multimedia</option>
+                                <option value="TEI">Tekmik Elektronika Industri</option>
+                                <option value="BC">Broadcasting</option>
+                            </select>
+                            @error('pilihan1')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="pilihan2">Pilihan Jurusan 2</label>
+                            <select class="form-control @error('pilihan2') is-invalid @enderror" type="text" name="pilihan2" id="pilihan2">
+                                <option value="{{ $calonsiswa->pilihan2 }}">{{ $calonsiswa->pilihan2 }}</option>
+                                <option value="RPL">Rekayasa perangkat Lunak</option>
+                                <option value="TKJ">Teknik Komputer dan Jaringan</option>
+                                <option value="MM">Multimedia</option>
+                                <option value="TEI">Tekmik Elektronika Industri</option>
+                                <option value="BC">Broadcasting</option>
+                            </select>
+                            @error('pilihan2')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <input class="form-control @error('alamat') is-invalid @enderror" type="text" name="alamat" id="alamat" value="{{ $calonsiswa->alamat }}">
+                            @error('alamat')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="nohp">No HP</label>
+                            <input class="form-control @error('nohp') is-invalid @enderror" type="text" name="nohp" id="nohp" value="{{ $calonsiswa->nohp }}">
+                            @error('nohp')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <button class="btn btn-primary mb-4" type="submit">Simpan</button>
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Edit Calon Siswa</title>
+    <title>Data Calon Siswa</title>
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -47,10 +47,10 @@
                         <input class="form-control" type="text" name="noppdb" id="noppdb" value="{{ $calonsiswa->noppdb }}" readonly></input>
                     </div>
                     <div class="form-group">
-                        <label for="nohp">Nomor HandPhone</label>
+                        <label for="nohp">Nomor Telepon</label>
                         <input class="form-control" type="text" name="nohp" id="nohp" value="{{ $calonsiswa->nohp }}" readonly></input>
                     </div>
-                    <a href="{{ url('/siswabaru') }}" class="btn btn-primary mb-4">Kembali</a>
+                    <a href="{{ url('/calonsiswa') }}" class="btn btn-primary mb-4">Kembali</a>
                 </form>
             </div>
         </div>

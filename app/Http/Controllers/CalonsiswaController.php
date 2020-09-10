@@ -8,7 +8,8 @@ use App\Calonsiswa;
 class CalonsiswaController extends Controller
 {
     public function index() {
-        return "Tabel Data Calon Siswa";
+        $csb = Calonsiswa::all();
+        return view('indexcalonsiswa', ['calonsiswa' => $csb]);
     }
 
     public function create() {
@@ -17,17 +18,6 @@ class CalonsiswaController extends Controller
 
     public function store(Request $request) {
         $validateData = $request->validate([
-            /*
-            $table->id();
-            $table->string('noppdb');
-            $table->string('nama');
-            $table->string('asal_sekolah');
-            $table->string('pilihan1');
-            $table->string('pilihan2');
-            $table->string('alamat');
-            $table->string('nohp');
-            $table->timestamps();
-            */
             'noppdb'=>'required|size:10',
             'nama'=>'required|min:3|max:60',
             'asal_sekolah'=>'required',
@@ -46,7 +36,40 @@ class CalonsiswaController extends Controller
         $calonsiswa->nohp = $validateData['nohp'];
         $calonsiswa->save();
 
-        $csb = Calonsiswa::all();
-        return view('indexcalonsiswa', ['calonsiswa'=>$csb]);
+        return redirect()->route('calonsiswa.index')->with('pesanSuccess', "Data  {$validateData['nama']} berhasil di Tambahkan!");;
+    }
+
+    public function show($calonsiswa)
+    {
+        // dd($calonsiswa);
+        $result = Calonsiswa::find($calonsiswa);
+        return view('detail_calon', ['calonsiswa' => $result]);
+    }
+
+    public function delete($calonsiswa)
+    {
+        $siswa = Calonsiswa::find($calonsiswa);
+        $calonsiswa = $siswa->delete();
+
+        return redirect()->route('calonsiswa.index')->with('pesanDanger', "Data  {$siswa['nama']} berhasil di Hapus!");
+    }
+
+    public function edit($calonsiswa) {
+        $result = Calonsiswa::find($calonsiswa);
+        return view('form-edit', ['calonsiswa' => $result]);
+    }
+
+    public function prosesEdit(Request $request, Calonsiswa $calonsiswa) {
+        $validateData = $request->validate([
+            'noppdb'=>'required|size:10',
+            'nama'=>'required|min:3|max:60',
+            'asal_sekolah'=>'required',
+            'pilihan1'=>'required',
+            'pilihan2'=>'required',
+            'alamat'=>'required',
+            'nohp'=>'required',
+        ]);
+        $calonsiswa::where('id', $calonsiswa->id)->update($validateData);
+        return redirect()->route('calonsiswa.index')->with('pesanSuccess', "Data  {$validateData['nama']} berhasil di Ubah!");
     }
 }
